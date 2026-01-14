@@ -341,6 +341,7 @@ const {
         background-color: var(--color-border);
         border-radius: var(--br);
         color: var(--color-fg-dim);
+        position: relative;
 
         &[aria-pressed="true"] {
           color: var(--color-accent);
@@ -355,6 +356,50 @@ const {
           outline: 2px dotted var(--color-accent);
           outline-offset: 2px;
           color: var(--color-accent-light);
+        }
+
+        &::after {
+          opacity: 0;
+          translate: -4% 0;
+          position: absolute;
+          top: calc(100% + var(--lh) * 0.25);
+          right: 0;
+          background: red;
+          white-space: nowrap;
+          pointer-events: none;
+          background-color: var(--color-bg-contrast);
+          padding: calc(var(--lh) * 0.25) calc(var(--lh) * 0.5);
+          border-radius: var(--br);
+          font-size: calc(var(--fz) * 0.85);
+          color: var(--color-fg-dim);
+          box-shadow: inset 0 0 0 1px var(--color-border);
+        }
+
+        @media (prefers-reduced-motion: no-preference) {
+          &::after {
+            transition: all 0.18s ease-in-out;
+          }
+        }
+
+        @media (pointer: fine) {
+          &:hover::after {
+            opacity: 1;
+            translate: 0 0;
+          }
+        }
+
+        &[data-theme="system"]::after {
+          content: "System preference";
+        }
+
+        &[data-theme="light"]::after {
+          position: absolute;
+          content: "Light theme";
+        }
+
+        &[data-theme="dark"]::after {
+          position: absolute;
+          content: "Dark theme";
         }
       }
 
