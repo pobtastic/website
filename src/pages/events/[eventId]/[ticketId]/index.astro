@@ -27,7 +27,7 @@ let ticketTimestamp = "";
 
 try {
   const response = await fetch(`${API_URL}/tickets/${eventId}/${ticketId}`, {
-    headers: { Authorization: `Bearer ${API_AUTH}` },
+    headers: { Authorization: `Bearer ${API_AUTH}`, ...Sentry.getTraceData() },
   });
 
   if (!response.ok) {

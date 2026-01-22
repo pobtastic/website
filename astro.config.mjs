@@ -41,9 +41,7 @@ export default defineConfig({
   ),
   integrations: [
     sentry({
-      org: "nn1-dev",
       project: "website",
-      authToken: process.env.SENTRY_AUTH_TOKEN,
     }),
     sitemap({
       filter: (page) => !EXCLUDED_ROUTES.includes(page),
