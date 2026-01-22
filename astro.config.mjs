@@ -40,7 +40,10 @@ export default defineConfig({
     {},
   ),
   integrations: [
-    sentry(),
+    sentry({
+      org: "nn1-dev",
+      project: "website",
+    }),
     sitemap({
       filter: (page) => !EXCLUDED_ROUTES.includes(page),
     }),
