@@ -13,21 +13,20 @@ import Container from "../components/Container.astro";
 >
   <Hero title="Test" description="Test" />
   <Section>
-    <script>
-      function throwTestError() {
-        throw new Error("Sentry Example Frontend Error");
-      }
-      async function throwApiError() {
-        await fetch("/api/test-error");
-      }
-    </script>
-
     <Container narrow>
       <button type="button" onclick="throwTestError()">
         Throw a frontend error
       </button>
       <button type="button" onclick="throwApiError()">Throw an API error</button
       >
+      <script is:inline>
+        function throwTestError() {
+          throw new Error("Sentry Example Frontend Error");
+        }
+        async function throwApiError() {
+          await fetch("/api/test-error");
+        }
+      </script>
     </Container>
   </Section>
   <Connect />
