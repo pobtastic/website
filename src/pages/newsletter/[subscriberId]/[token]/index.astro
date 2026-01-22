@@ -5,10 +5,6 @@ import { API_AUTH, API_URL } from "astro:env/server";
 export const prerender = false;
 
 const { subscriberId, token } = Astro.params;
-console.log({
-  subscrberId: subscriberId,
-  token,
-});
 if (!subscriberId || !token) {
   Sentry.captureMessage("Access non-existing event.");
   return Astro.redirect("/404");
