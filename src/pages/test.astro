@@ -14,15 +14,22 @@ import Container from "../components/Container.astro";
   <Hero title="Test" description="Test" />
   <Section>
     <Container narrow>
-      <button type="button" onclick="throwTestError()"> Frontend error </button>
-      <button type="button" onclick="throwApiError()">API error</button>
-      <button type="button" onclick="throwApiTraceError()">API error</button>
-
-      Throw an API error with a trace
+      <button type="button" id="one"> Frontend error </button>
+      <button type="button" id="two">API error</button>
+      <button type="button" id="three">API trace error</button>
     </Container>
-    >
-    <script is:inline>
+
+    <script>
       import * as Sentry from "@sentry/astro";
+
+      function throwTestError() {
+        throw new Error("Sentry Example Frontend Error");
+      }
+
+      async function throwApiError() {
+        await fetch("/api/test-error");
+      }
+
       async function throwApiTraceError() {
         await Sentry.startSpan(
           {
@@ -34,12 +41,14 @@ import Container from "../components/Container.astro";
           },
         );
       }
-      function throwTestError() {
-        throw new Error("Sentry Example Frontend Error");
-      }
-      async function throwApiError() {
-        await fetch("/api/test-error");
-      }
+
+      const buttonOne = document.getElementById("one");
+      const buttonTwo = document.getElementById("two");
+      const buttonThree = document.getElementById("three");
+
+      buttonOne?.addEventListener("click", throwTestError);
+      buttonTwo?.addEventListener("click", throwApiError);
+      buttonThree?.addEventListener("click", throwApiTraceError);
     </script>
   </Section>
 </Layout>
