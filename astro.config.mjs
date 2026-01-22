@@ -18,7 +18,6 @@ export default defineConfig({
   adapter: cloudflare({
     imageService: "compile",
   }),
-  integrations: [sentry()],
   env: {
     schema: {
       API_URL: envField.string({
@@ -41,6 +40,7 @@ export default defineConfig({
     {},
   ),
   integrations: [
+    sentry(),
     sitemap({
       filter: (page) => !EXCLUDED_ROUTES.includes(page),
     }),
