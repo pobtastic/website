@@ -1,5 +1,6 @@
 import { defineConfig, envField } from "astro/config";
 import cloudflare from "@astrojs/cloudflare";
+import sentry from "@sentry/astro";
 import fs from "node:fs";
 import path from "node:path";
 
@@ -17,6 +18,13 @@ export default defineConfig({
   adapter: cloudflare({
     imageService: "compile",
   }),
+  integrations: [
+    sentry({
+      org: "nn1-dev",
+      project: "website",
+      authToken: process.env.SENTRY_AUTH_TOKEN,
+    }),
+  ],
   env: {
     schema: {
       API_URL: envField.string({

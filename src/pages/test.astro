@@ -1,0 +1,34 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Hero from "../sections/Hero.astro";
+import Connect from "../sections/Connect.astro";
+import Section from "../components/Section.astro";
+import Container from "../components/Container.astro";
+---
+
+<Layout
+  title="Code of Conduct | NN1 Dev Club"
+  description="We are dedicated to providing a harassment-free experience for all meetup attendees and community members. We do not tolerate harassment of participants in any form."
+  noIndex
+>
+  <Hero title="Test" description="Test" />
+  <Section>
+    <script>
+      function throwTestError() {
+        throw new Error("Sentry Example Frontend Error");
+      }
+      async function throwApiError() {
+        await fetch("/api/test-error");
+      }
+    </script>
+
+    <Container narrow>
+      <button type="button" onclick="throwTestError()">
+        Throw a frontend error
+      </button>
+      <button type="button" onclick="throwApiError()">Throw an API error</button
+      >
+    </Container>
+  </Section>
+  <Connect />
+</Layout>
