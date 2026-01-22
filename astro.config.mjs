@@ -18,13 +18,7 @@ export default defineConfig({
   adapter: cloudflare({
     imageService: "compile",
   }),
-  integrations: [
-    sentry({
-      org: "nn1-dev",
-      project: "website",
-      authToken: process.env.SENTRY_AUTH_TOKEN,
-    }),
-  ],
+  integrations: [sentry()],
   env: {
     schema: {
       API_URL: envField.string({
