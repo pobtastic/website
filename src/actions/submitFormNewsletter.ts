@@ -22,7 +22,10 @@ export default defineAction({
 
     const response = await fetch(`${API_URL}/subscribers`, {
       method: "POST",
-      headers: { Authorization: `Bearer ${API_AUTH}` },
+      headers: {
+        Authorization: `Bearer ${API_AUTH}`,
+        ...Sentry.getTraceData(),
+      },
       body: JSON.stringify({
         email: input.email,
       }),

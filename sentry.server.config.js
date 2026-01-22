@@ -5,6 +5,7 @@ Sentry.init({
   environment: import.meta.env.MODE,
   replaysSessionSampleRate: 0,
   replaysOnErrorSampleRate: 1.0,
+  tracesSampleRate: 1.0,
   sourceMapsUploadOptions: {
     project: "website",
     authToken: process.env.SENTRY_AUTH_TOKEN,

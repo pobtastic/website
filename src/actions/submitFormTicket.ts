@@ -39,7 +39,10 @@ export default defineAction({
 
     const response = await fetch(`${API_URL}/tickets`, {
       method: "POST",
-      headers: { Authorization: `Bearer ${API_AUTH}` },
+      headers: {
+        Authorization: `Bearer ${API_AUTH}`,
+        ...Sentry.getTraceData(),
+      },
       body: JSON.stringify({
         name,
         email,
