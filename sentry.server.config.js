@@ -11,4 +11,5 @@ Sentry.init({
     authToken: process.env.SENTRY_AUTH_TOKEN,
   },
   sendDefaultPii: true,
+  enableLogs: true,
 });
