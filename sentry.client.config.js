@@ -1,19 +1,15 @@
 import * as Sentry from "@sentry/astro";
 
 Sentry.init({
-  dsn: "https://34ed16507ec802cbbb8fef5c7be8b43b@o4507649139146752.ingest.de.sentry.io/4507873164066896",
+  dsn: "https://9ce758c607ef6a42feb350348185bbec@o4507649139146752.ingest.de.sentry.io/4507649154089040",
+  sendDefaultPii: true,
   integrations: [
     Sentry.browserTracingIntegration(),
     Sentry.replayIntegration(),
   ],
   environment: import.meta.env.MODE,
+  tracesSampleRate: 1.0,
   replaysSessionSampleRate: 0.1,
   replaysOnErrorSampleRate: 1.0,
-  tracesSampleRate: 1.0,
-  sourceMapsUploadOptions: {
-    project: "website",
-    authToken: process.env.SENTRY_AUTH_TOKEN,
-  },
-  sendDefaultPii: true,
   enableLogs: true,
 });

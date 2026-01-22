@@ -19,15 +19,29 @@ import Container from "../components/Container.astro";
       </button>
       <button type="button" onclick="throwApiError()">Throw an API error</button
       >
-      <script is:inline>
-        function throwTestError() {
-          throw new Error("Sentry Example Frontend Error");
-        }
-        async function throwApiError() {
-          await fetch("/api/test-error");
-        }
-      </script>
+      Throw an API error with a trace
     </Container>
+    >
+    <script is:inline>
+      import * as Sentry from "@sentry/astro";
+      async function throwApiError() {
+        await Sentry.startSpan(
+          {
+            name: "Example Frontend Span",
+            op: "test",
+          },
+          async () => {
+            await fetch("/api/test-error");
+          },
+        );
+      }
+      function throwTestError() {
+        throw new Error("Sentry Example Frontend Error");
+      }
+      async function throwApiError() {
+        await fetch("/api/test-error");
+      }
+    </script>
   </Section>
-  <Connect />
 </Layout>
+<Connect />
