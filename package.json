@@ -15,7 +15,7 @@
     "@astrojs/rss": "^4.0.15",
     "@astrojs/sitemap": "^3.7.0",
     "@sentry/astro": "^10.36.0",
-    "astro": "^5.16.14",
+    "astro": "^5.16.15",
     "canvas-confetti": "^1.9.4",
     "sanitize-html": "^2.17.0",
     "sharp": "^0.34.5",
