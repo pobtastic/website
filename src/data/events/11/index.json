@@ -1,8 +1,7 @@
 {
   "id": 11,
   "ogImage": "./og.jpg",
-  "draft": true,
-  "name": "#11: \"TBC\" by Oliver Medhurst and \"TBC\" by Rob Hough",
+  "name": "#11: \"Compiling JavaScript ahead-of-time\" by Oliver Medhurst and \"TBC\" by Rob Hough",
   "description": "TBC",
   "dateStart": "2026-03-26T18:00Z",
   "dateEnd": "2026-03-26T20:00Z",
@@ -21,8 +20,8 @@
     {
       "dateStart": "2026-03-26T18:30Z",
       "dateEnd": "2026-03-26T19:00Z",
-      "title": "\"TBC\" by Oliver Medhurst",
-      "description": ""
+      "title": "\"Compiling JavaScript ahead-of-time\" by Oliver Medhurst",
+      "description": "Existing JavaScript (and TypeScript) is compiled just-in-time, compiled from source on user's machines, but what about ahead-of-time, compiled in advance like C++ or Rust? This talk will explore the pros and cons of this upcoming paradigm with real-world examples and working demos!"
     },
     {
       "dateStart": "2026-03-26T19:00Z",
