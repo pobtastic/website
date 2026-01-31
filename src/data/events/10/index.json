@@ -53,5 +53,17 @@
       "src": "./gallery/4.jpg",
       "caption": ""
     }
+  ],
+  "videos": [
+    {
+      "youtubeId": "cJnocwvOPNo",
+      "poster": "./posters/1.jpg",
+      "caption": "\"Bad at CSS\" by Keith Cirkel"
+    },
+    {
+      "youtubeId": "1peTMHnGXdI",
+      "poster": "./posters/2.jpg",
+      "caption": "\"Start-Up to Exit: The Journey for Tech Companies\" by Samantha Wildman and Talitha Heaton"
+    }
   ]
 }
