@@ -35,16 +35,17 @@ const formatTime = (date: Date) =>
       <div class="events__grid">
         {
           eventsUpcoming.map(
-            ({ id, data: { id: eventId, name, description, dateStart, location } }) => (
+            ({
+              id,
+              data: { id: eventId, name, description, dateStart, location },
+            }) => (
               <a
                 href={`/events/${id}`}
                 class="events__item events__item--upcoming"
                 data-id={eventId}
               >
                 <div class="events__item-content">
-                  <span class="events__item-label events__item-label--active">
-                    Upcoming event
-                  </span>
+                  <span class="events__item-label">Upcoming event</span>
                   <h3 class="events__item-name">{name}</h3>
                   <p class="events__item-description">{description}</p>
                   <ul class="events__item-list">
@@ -106,14 +107,11 @@ const formatTime = (date: Date) =>
         }
         {
           eventsPast.map(({ id, data: { id: eventId, name } }) => (
-            <a
-              href={`/events/${id}`}
-              class="events__item events__item--past"
-              data-id={eventId}
-            >
+            <a href={`/events/${id}`} class="events__item" data-id={eventId}>
               <div class="events__item-content">
-                <span class="events__item-label">Past event</span>
-                <h3 class="events__item-name events__item-name--past">{name}</h3>
+                <h3 class="events__item-name events__item-name--past">
+                  {name}
+                </h3>
               </div>
             </a>
           ))
@@ -240,8 +238,17 @@ const formatTime = (date: Date) =>
       content: "";
       width: 10px;
       height: 10px;
-      background-color: var(--color-border);
+      background-color: var(--color-accent);
       border-radius: 50%;
+    }
+
+    &::after {
+      animation: pulse 2s infinite;
+    }
+    @media (prefers-reduced-motion) {
+      &::after {
+        animation: none;
+      }
     }
   }
 
@@ -253,21 +260,6 @@ const formatTime = (date: Date) =>
     100% {
       transform: scale(3);
       opacity: 0;
-    }
-  }
-
-  .events__item-label--active {
-    &::before,
-    &::after {
-      background-color: var(--color-accent);
-    }
-    &::after {
-      animation: pulse 2s infinite;
-    }
-    @media (prefers-reduced-motion) {
-      &::after {
-        animation: none;
-      }
     }
   }
 
