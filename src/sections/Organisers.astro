@@ -55,36 +55,36 @@ const allFeedback = await getCollection("feedback");
 <Section>
   <Container>
     <div class="organisers">
-      <div class="feedback">
-        <Heading level={2} title="What attendees say" anchor />
-        <div class="feedback__grid">
-          {
-            allFeedback.map(({ data: { image, name, role, quote } }) => (
-              <div class="feedback__item">
-                <div class="feedback__item-content">
-                  <blockquote class="feedback__item-quote">{quote}</blockquote>
-                  <div class="feedback__item-author">
-                    <Image
-                      src={image}
-                      alt={name}
-                      width="48"
-                      height="48"
-                      loading="lazy"
-                      class="feedback__item-author-image"
-                    />
-                    <div class="feedback__item-author-info">
-                      <p class="feedback__item-author-name">{name}</p>
-                      {role ? (
-                        <p class="feedback__item-author-role">{role}</p>
-                      ) : null}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))
-          }
-        </div>
-      </div>
+      <!-- <div class="feedback"> -->
+      <!--   <Heading level={2} title="What attendees say" anchor /> -->
+      <!--   <div class="feedback__grid"> -->
+      <!--     { -->
+      <!--       allFeedback.map(({ data: { image, name, role, quote } }) => ( -->
+      <!--         <div class="feedback__item"> -->
+      <!--           <div class="feedback__item-content"> -->
+      <!--             <blockquote class="feedback__item-quote">{quote}</blockquote> -->
+      <!--             <div class="feedback__item-author"> -->
+      <!--               <Image -->
+      <!--                 src={image} -->
+      <!--                 alt={name} -->
+      <!--                 width="48" -->
+      <!--                 height="48" -->
+      <!--                 loading="lazy" -->
+      <!--                 class="feedback__item-author-image" -->
+      <!--               /> -->
+      <!--               <div class="feedback__item-author-info"> -->
+      <!--                 <p class="feedback__item-author-name">{name}</p> -->
+      <!--                 {role ? ( -->
+      <!--                   <p class="feedback__item-author-role">{role}</p> -->
+      <!--                 ) : null} -->
+      <!--               </div> -->
+      <!--             </div> -->
+      <!--           </div> -->
+      <!--         </div> -->
+      <!--       )) -->
+      <!--     } -->
+      <!--   </div> -->
+      <!-- </div> -->
       {
         founders ? (
           <div class="organisers__section">
