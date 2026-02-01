@@ -3,8 +3,8 @@ import Container from "../components/Container.astro";
 import Profile from "../components/Profile.astro";
 import Heading from "../components/Heading.astro";
 import Section from "../components/Section.astro";
-import { Image } from "astro:assets";
-import { getEntry, getCollection } from "astro:content";
+import { getEntry } from "astro:content";
+// import { getEntry, getCollection } from "astro:content";
 
 const organisers = await Promise.all([
   getEntry("member", "pawel-grzybek"),
@@ -49,7 +49,7 @@ interface Props {
 
 const { founders = true, partners = true, supporters = true } = Astro.props;
 
-const allFeedback = await getCollection("feedback");
+// const allFeedback = await getCollection("feedback");
 ---
 
 <Section>
