@@ -26,6 +26,12 @@ let ticketEmail = "";
 let ticketTimestamp = "";
 
 try {
+  console.log({
+    sentryHeaders: {
+      ...Sentry.getTraceData(),
+    },
+  });
+
   const response = await fetch(`${API_URL}/tickets/${eventId}/${ticketId}`, {
     headers: { Authorization: `Bearer ${API_AUTH}`, ...Sentry.getTraceData() },
   });
