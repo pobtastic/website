@@ -41,7 +41,6 @@ export default defineConfig({
   ),
   integrations: [
     sentry({
-      debug: true,
       project: "website",
     }),
     sitemap({
