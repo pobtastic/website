@@ -54,14 +54,10 @@ const qr = renderSVG(`https://nn1.dev/events/${eventId}/${ticketId}`);
 
 function obfuscateName(fullName: string) {
   // Split the full name into parts
-  const nameParts = fullName.split(" ");
+  const parts = fullName.split(" ");
 
   // Map through each part and obfuscate
-  const obfuscated = nameParts.map((part) => {
-    if (part.length <= 1) return part;
-    // Keep first character and replace rest with asterisks
-    return part[0] + "*".repeat(part.length - 1);
-  });
+  const obfuscated = parts.map((p) => [...p].length <= 1 ? p : [...p][0] + "*".repeat([...p].length - 1));
 
   // Join back with space
   return obfuscated.join(" ");
