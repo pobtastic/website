@@ -21,7 +21,7 @@ export default defineAction({
     }
 
     console.log({
-      sentryHeaders: {
+      sentryHeadersAction: {
         ...Sentry.getTraceData(),
       },
     });

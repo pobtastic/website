@@ -37,12 +37,6 @@ export default defineAction({
       });
     }
 
-    console.log({
-      sentryHeaders: {
-        ...Sentry.getTraceData(),
-      },
-    });
-
     const response = await fetch(`${API_URL}/tickets`, {
       method: "POST",
       headers: {
