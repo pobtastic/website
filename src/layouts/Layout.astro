@@ -72,7 +72,7 @@ const {
   <body>
     <header class="header">
       <a href="#main" class="skip-link">Skip to main content</a>
-      <a href="/">
+      <a href="/" data-astro-prefetch>
         <svg
           class="logo"
           width="121"
@@ -125,8 +125,8 @@ const {
       <nav class="nav js-nav">
         <div class="nav__inner">
           <ul class="menu">
-            <li><a href="/events">Events</a></li>
-            <li><a href="/spotlight">Spotlight</a></li>
+            <li><a href="/events" data-astro-prefetch>Events</a></li>
+            <li><a href="/spotlight" data-astro-prefetch>Spotlight</a></li>
             <li><a href="https://opencollective.com/nn1-dev">Support us</a></li>
           </ul>
           <div class="theme-picker js-theme-picker">

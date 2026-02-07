@@ -39,6 +39,7 @@ const formatTime = (date: Date) =>
               return (
                 <a
                   href={`/events/${id}`}
+                  data-astro-prefetch
                   class={`events__item ${isDateStartUpcoming ? "events__item--upcoming" : "events__item--past"}`}
                   data-id={id}
                 >

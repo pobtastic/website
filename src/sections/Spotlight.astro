@@ -22,7 +22,7 @@ const allSpotlights = await getCollection("spotlight");
           )
           .map(({ data: { name, role, date, image }, id }) => {
             return (
-              <a href={`/spotlight/${id}`} class="spotlight__item" data-id={id}>
+              <a href={`/spotlight/${id}`} class="spotlight__item" data-id={id} data-astro-prefetch>
                 <div class="spotlight__item-content">
                   <Image
                     src={image}
